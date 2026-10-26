@@ -1,0 +1,36 @@
+/* ===== Not found (404 / error page) ===== */
+
+.not-found {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.not-found-code {
+  display: block;
+  font-size: clamp(4rem, 15vw, 7rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -4px;
+  background: linear-gradient(45deg, var(--color-navy), var(--color-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.not-found p {
+  margin: 0.5rem 0 1.5rem;
+  color: var(--color-text-secondary);
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.not-found-actions .link-btn,
+.not-found-actions .primary-btn {
+  padding: 0.7rem 1.3rem;
+}

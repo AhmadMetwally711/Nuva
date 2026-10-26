@@ -1,0 +1,136 @@
+/* ===== Base: variables, font, global elements, shared helpers ===== */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap");
+
+:root {
+  /* Brand colors */
+  --color-primary: #3988c9;
+  --color-primary-hover: #24669e;
+  --color-navy: #17324d;
+  --color-heading: #172b3a;
+
+  /* Backgrounds */
+  --color-header: #eaf6ff;
+  --color-body: #ffffff;
+  --color-footer: #17324d;
+  --color-card-hover: #f5faff;
+  --color-accent: #b9e3ff;
+
+  /* Text */
+  --color-text: #172b3a;
+  --color-text-secondary: #64748b;
+  --color-footer-text: #d5e3ef;
+
+  /* UI */
+  --color-border: #d8dee5;
+  --color-input-bg: #ffffff;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color-scheme: light dark;
+  color: var(--color-text);
+  background-color: var(--color-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+h2 {
+  letter-spacing: -0.7px; /* Extra tightening for headings */
+  font-weight: 400;
+}
+
+a {
+  color: var(--color-primary-hover);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+label {
+  display: flex;
+  color: var(--color-text);
+}
+
+button {
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+form button {
+  padding: 4px 8px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  width: 100px;
+  transition: background-color 0.2s ease;
+}
+
+form button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+form button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+select {
+  border-radius: 5px;
+  margin-left: 5px;
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+select:disabled,
+input:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sign-form-error-message {
+  color: #dc3545;
+  border-radius: 4px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

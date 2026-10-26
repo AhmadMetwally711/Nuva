@@ -1,0 +1,13 @@
+/* Import order matters: base first (it holds the :root variables). */
+@import "./base.css";
+@import "./layout.css";
+@import "./header.css";
+@import "./auth.css";
+@import "./shop.css";
+@import "./cart-checkout.css";
+@import "./orders.css";
+@import "./admin.css";
+@import "./admin-products.css";
+@import "./footer.css";
+@import "./home.css";
+@import "./not-found.css";

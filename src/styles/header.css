@@ -1,0 +1,239 @@
+/* ===== Header: logo, nav, cart badge, user chip, mobile menu ===== */
+
+.store-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background-color: var(--color-header);
+  color: var(--color-heading);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+.store-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-navy);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.store-logo svg {
+  flex-shrink: 0;
+}
+
+.store-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.store-nav a,
+.store-nav button {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.store-nav a:hover,
+.store-nav button:hover {
+  color: var(--color-primary);
+}
+
+.store-nav button {
+  background: transparent;
+  border: 0.5px solid var(--color-text-secondary);
+  padding: 0.2rem 0.6rem;
+}
+
+.cart-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.7rem;
+  margin: 0 -0.7rem; /* بيلغي أثر الـ padding على المسافات، فمفيش حاجة بتتحرك */
+  border-radius: 999px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.store-nav .cart-link.has-items {
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+.store-nav .cart-link.has-items:hover {
+  background: var(--color-primary-hover);
+  color: white;
+}
+
+.cart-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.3rem;
+  height: 1.3rem;
+  margin-left: 0.45rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: var(--color-navy);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* ===== Header: user chip ===== */
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-heading);
+  font-size: 0.9rem;
+}
+
+.user-avatar {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.user-name {
+  max-width: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-role {
+  padding: 0.05rem 0.5rem;
+  border: 0.5px solid var(--color-text-secondary);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 720px) {
+  .user-name {
+    display: none;
+  }
+}
+
+/* ===== Header: desktop ===== */
+
+.nav-menu {
+  display: contents; /* اللينكات بتتصرف كأنها مباشرة جوه الـ nav */
+}
+
+.store-nav .user-chip {
+  order: 2;
+}
+
+.store-nav .nav-auth {
+  order: 3;
+}
+
+.menu-user {
+  display: none;
+}
+
+.store-nav .menu-toggle {
+  display: none;
+  order: 4;
+  padding: 0.3rem;
+  border: none;
+  background: transparent;
+  color: var(--color-heading);
+  line-height: 0;
+}
+
+.store-nav .menu-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ===== Header: mobile ===== */
+
+@media (max-width: 720px) {
+  .store-header {
+    padding: 0.7rem 1rem;
+  }
+
+  .store-nav {
+    gap: 0.7rem;
+  }
+
+  .store-nav .menu-toggle {
+    display: inline-flex;
+  }
+
+  .store-nav .user-role {
+    display: none;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.4rem 1rem 1rem;
+    background-color: var(--color-header);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .store-nav .menu-user {
+    display: block;
+    order: -1;
+    padding: 0.6rem 0.4rem;
+    color: var(--color-heading);
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .store-nav .nav-menu > a,
+  .store-nav .nav-menu > button {
+    padding: 0.8rem 0.4rem;
+    font-size: 1rem;
+    text-align: left;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-border);
+    background: transparent;
+  }
+
+  .store-nav .nav-menu > a.cart-link {
+    align-self: flex-start;
+    margin: 0.4rem 0;
+    padding: 0.5rem 0.9rem;
+    border-bottom: none;
+    border-radius: 999px;
+  }
+
+  .store-nav .nav-menu > a.cart-link.has-items {
+    background: var(--color-primary);
+  }
+}
