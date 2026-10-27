@@ -237,3 +237,37 @@
     background: var(--color-primary);
   }
 }
+.add-to-cart-btn.is-added {
+  background-color: var(--color-primary-hover);
+}
+
+.cart-mobile {
+  display: none;
+  position: relative;
+  padding: 0.3rem;
+  color: var(--color-heading);
+  line-height: 0;
+}
+
+.store-nav .cart-mobile .cart-count {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 720px) {
+  .cart-mobile {
+    display: inline-flex;
+    order: 1;
+  }
+
+  .nav-menu .cart-link {
+    display: none;
+  }
+}

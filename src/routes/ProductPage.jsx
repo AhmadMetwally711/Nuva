@@ -15,6 +15,13 @@ function ProductPage() {
   const [color, setColor] = useState(null);
   const [loading, setLoading] = useState(true);
   const { isAdmin } = useAuth();
+  const [justAddedId, setJustAddedId] = useState(null);
+
+  useEffect(() => {
+    if (justAddedId === null) return;
+    const timer = setTimeout(() => setJustAddedId(null), 2500);
+    return () => clearTimeout(timer);
+  }, [justAddedId]);
 
   useEffect(() => {
     async function loadProduct() {
@@ -59,10 +66,12 @@ function ProductPage() {
     (a, b) => SIZE_ORDER.indexOf(a) - SIZE_ORDER.indexOf(b),
   );
   const colors = [...new Set(variants.map((v) => v.color))];
-
   const selectedVariant = variants.find(
     (v) => v.size === size && v.color === color,
   );
+
+  const justAdded =
+    Boolean(selectedVariant) && justAddedId === selectedVariant.id;
   const inCart = selectedVariant
     ? items.find((i) => i.variantId === selectedVariant.id)
     : null;
@@ -78,6 +87,7 @@ function ProductPage() {
       color: selectedVariant.color,
       stock: selectedVariant.stock,
     });
+    setJustAddedId(selectedVariant.id);
   };
 
   const sizeDisabled = (s) =>
@@ -152,7 +162,7 @@ function ProductPage() {
           )}
 
           <button
-            className="add-to-cart-btn"
+            className={`add-to-cart-btn ${justAdded ? "is-added" : ""}`}
             onClick={handleAddToCart}
             disabled={
               isAdmin ||
@@ -163,10 +173,15 @@ function ProductPage() {
           >
             {isAdmin
               ? "Admins can't order"
-              : selectedVariant
-                ? "Add to cart"
-                : "Select size and color"}
+              : justAdded
+                ? "Added ✓"
+                : selectedVariant
+                  ? "Add to cart"
+                  : "Select size and color"}
           </button>
+          <span className="sr-only" role="status">
+            {justAdded ? "Added to your cart" : ""}
+          </span>
           <ReturnPolicyNote />
         </div>
       </div>

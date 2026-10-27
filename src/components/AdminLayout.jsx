@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, ScrollRestoration } from "react-router-dom";
 import StoreHeader from "./StoreHeader";
 
 function AdminLayout() {
@@ -6,6 +6,7 @@ function AdminLayout() {
     <>
       <StoreHeader />
       <main className="store-main">
+        <ScrollRestoration />
         <nav className="admin-tabs" aria-label="Admin navigation">
           <NavLink to="/admin" end>
             Overview
