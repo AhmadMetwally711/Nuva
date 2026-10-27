@@ -183,4 +183,4 @@ public/            favicon
 
 ## Author
 
-**Ahmad Metwally** · [LinkedIn](www.linkedin.com/in/ahmad-metwally-8007b9407) · [GitHub](https://github.com/AhmadMetwally711) · ahhmadsalehh@gmail.com
+**Ahmad Metwally** · [LinkedIn](www.linkedin.com/ahmad-metwally-8007b9407) · [GitHub](https://github.com/AhmadMetwally711) · ahhmadsalehh@gmail.com
