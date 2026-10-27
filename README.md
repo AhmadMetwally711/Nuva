@@ -174,14 +174,12 @@ public/            favicon
 - **Returns are recorded by the admin.** Customers contact the store within 14 days of delivery, which matches how many small shops work, and the admin records the return so refunds and stock stay consistent.
 - **Cart stored per account.** Moving the cart to the database means prices and stock shown in the cart are always current.
 
-## Known limitations and roadmap
+## Known Limitations and Future Improvements
 
-- Cash on delivery only. Online payments (Stripe) are not implemented yet.
-- No email notifications, size exchanges or wishlist yet.
-- Customers cannot submit return requests from the site yet.
-- No automated tests yet. Vitest for logic and Playwright for the main flows are planned.
-- Supabase free projects can pause after a period of inactivity, so the first load of the demo may be slow while the database wakes up.
-- Leaked password protection is a paid Supabase feature and is not enabled on the free plan.
+- Cash on delivery is currently the only supported payment method. Online payments are planned for a future release.
+- Wishlist, email notifications, and return request functionality are not implemented yet.
+- Automated testing is planned, including Vitest for unit tests and Playwright for end-to-end testing.
+- The live demo may take longer to load after periods of inactivity due to Supabase free-tier project pausing.
 
 ## Author
 
