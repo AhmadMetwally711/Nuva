@@ -10,10 +10,10 @@ Customers browse products, pick size and color variants, order with cash on deli
 
 ## Demo accounts
 
-| Role     | Email                     | Password             |
-| -------- | ------------------------- | -------------------- |
-| Customer | demo.customer@example.com | `YOUR-DEMO-PASSWORD` |
-| Admin    | Available on request      |                      |
+| Role     | Email                | Password         |
+| -------- | -------------------- | ---------------- |
+| Customer | customer@example.com | `Customer_12345` |
+| Admin    | Available on request |                  |
 
 You can also create your own customer account from the Sign up page.
 
